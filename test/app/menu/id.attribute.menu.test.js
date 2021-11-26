@@ -1,7 +1,7 @@
 var chai = require('chai'); 
 var expect = chai.expect;
 
-
+const { init } = require('../../../src/app/menu/id.attribute.menu');
 
 describe("main test", function(){
 
@@ -17,10 +17,16 @@ describe("main test", function(){
         '}\n' +
       '}}'; 
 
-    it('Test', function() {
+    it('test attribute', function() {
+        let idAttributeDomain = init();
 
+        let domainObj = JSON.parse(jsonValue);
+
+        let expected = 'file';
         
+        let result = idAttributeDomain.attribute(domainObj);
         
+        expect(expected).to.eql(result)
 
     })
 
