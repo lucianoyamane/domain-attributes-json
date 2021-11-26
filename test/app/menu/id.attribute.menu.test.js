@@ -18,6 +18,7 @@ describe("id menu test", function(){
       '}}'; 
 
     it('test attribute', function() {
+        
         let idAttributeDomain = init(new Map());
 
         let domainObj = JSON.parse(jsonValue);

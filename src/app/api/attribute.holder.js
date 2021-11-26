@@ -5,6 +5,9 @@ class AttributeHolder {
         this.name = name;
     }
 
+    getMenuAttribute(key, {source, entity}) {
+        return this.attributesMap.menu.get(key).attribute({source, entity});
+    }
 
     setAttr({source, entity}) {
         

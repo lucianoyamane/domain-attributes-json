@@ -8,7 +8,7 @@ class MenuDomain extends AttributeHolder {
     }
 
     getMenuAttribute(key, {source, entity}) {
-        return this.attributesMap[menu].get(key).attribute({source, entity});
+        return this.attributesMap['menu'].get(key).attribute({source, entity});
     }
 
     validStructure({source, entity}) {
@@ -16,7 +16,7 @@ class MenuDomain extends AttributeHolder {
     }
 
     setAttr({source, entity}) {
-        source['menu'][this.name] = this.attribute(domainObject);
+        entity['menu'][this.name] = this.attribute({source, entity});
     }
 
 }
