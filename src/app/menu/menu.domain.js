@@ -7,16 +7,16 @@ class MenuDomain extends AttributeHolder {
         super(attributesMap, name);
     }
 
-    getMenuAttribute(key, domainObject) {
-        return this.attributesMap[menu].get(key).attribute(domainObject);
+    getMenuAttribute(key, {source, entity}) {
+        return this.attributesMap[menu].get(key).attribute({source, entity});
     }
 
-    validStructure(domainObject) {
-        return domainObject.hasOwnProperty('menu');
+    validStructure({source, entity}) {
+        return source.hasOwnProperty('menu');
     }
 
-    setAttr(domainObject) {
-        domainObject['menu'][this.name] = this.attribute(domainObject);
+    setAttr({source, entity}) {
+        source['menu'][this.name] = this.attribute(domainObject);
     }
 
 }

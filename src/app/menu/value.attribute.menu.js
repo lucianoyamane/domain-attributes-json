@@ -1,10 +1,10 @@
 
 const { MenuDomain } = require('./menu.domain');
 
-class IdAttributeMenu extends MenuDomain {
+class ValueAttributeMenu extends MenuDomain {
 
     constructor(attributesMap) {
-        super(attributesMap, 'id');
+        super(attributesMap, 'value');
     }
 
     attribute({source, entity}) { 
@@ -15,5 +15,5 @@ class IdAttributeMenu extends MenuDomain {
 
 }
 
-module.exports.IdAttributeMenu = IdAttributeMenu;
-module.exports.init = (attributesMap) => new IdAttributeMenu(attributesMap);
+module.exports.ValueAttributeMenu = ValueAttributeMenu;
+module.exports.init = (attributesMap) => new ValueAttributeMenu(attributesMap);

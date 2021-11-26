@@ -6,23 +6,23 @@ class AttributeHolder {
     }
 
 
-    setAttr(domainObject) {
+    setAttr({source, entity}) {
         
     }
 
-    validStructure(domainObject) {
+    validStructure({source, entity}) {
         return true;
     }
 
 
-    attribute(domainObject) {
-        if (!this.validStructure(domainObject)) {
+    attribute({source, entity}) {
+        if (!this.validStructure({source, entity})) {
             throw new TypeError('invalid structure');
         }
     }
 
-    execute(domainObject) {
-        this.defineAtributo(domainObject);
+    execute({source, entity}) {
+        this.setAttr({source, entity});
     }
 }
 
