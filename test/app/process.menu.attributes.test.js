@@ -3,6 +3,8 @@ var expect = chai.expect;
 
 const { init } = require('../../src/app/process.menu.attributes');
 
+const { init:initAssociation } = require('../../src/app/association/association.app');
+
 describe("main test", function(){
 
     let jsonValue = '{"menu": {\n' +
@@ -23,9 +25,13 @@ describe("main test", function(){
 
       let domainObj = JSON.parse(jsonValue);
 
+      initAssociation(domainObj);
+
       let entityResult = {};
       
       processMenuAttributes.execute({source: domainObj, entity:entityResult});
+
+      console.log(entityResult)
       
       expect('').to.eql('')
         
