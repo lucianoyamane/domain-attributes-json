@@ -6,19 +6,19 @@ class PopUpDomain extends AttributeHolder {
         super(attributesMap, name);
     }
 
-    getMenuAttribute(key, {source, entity}) {
-        return this.attributesMap['popup'].get(key).attribute({source, entity});
+    getMenuAttribute(key, entity) {
+        return this.attributesMap['popup'].get(key).attribute(entity);
     }
 
-    validStructure({source, entity}) {
-        return source != undefined;
+    validStructure(entity) {
+        return entity != undefined;
     }
 
-    setAttr({source, entity}) {
+    setAttr(entity) {
         if (!entity['menu'].hasOwnProperty('popup')) {
             entity['menu']['popup'] = {};    
         }
-        entity['menu']['popup'][this.name] = this.attribute({source, entity});
+        entity['menu']['popup'][this.name] = this.attribute(entity);
     }
 
 }

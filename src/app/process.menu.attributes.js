@@ -20,10 +20,10 @@ class ProcessMenuAttributes extends AttributeHolder {
         super(menuAttributesMap(), 'menu_processed');
     }
 
-    execute({source, entity}) {
-        let { menu } = source;
-        this.attributesMap['menu'].forEach((value, key) => {
-            value.execute({source: menu, entity})
+    execute(entity) {
+        let { menu } = entity;
+        this.attributesMap['menu'].forEach(value => {
+            value.execute(menu)
         })   
     }
 

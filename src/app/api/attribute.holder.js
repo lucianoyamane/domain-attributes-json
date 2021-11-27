@@ -5,27 +5,27 @@ class AttributeHolder {
         this.name = name;
     }
 
-    getMenuAttribute(key, {source, entity}) {
-        return this.attributesMap.menu.get(key).attribute({source, entity});
+    getMenuAttribute(key, entity) {
+        return this.attributesMap.menu.get(key).attribute(entity);
     }
 
-    setAttr({source, entity}) {
+    setAttr(entity) {
         
     }
 
-    validStructure({source, entity}) {
+    validStructure(entity) {
         return true;
     }
 
 
-    attribute({source, entity}) {
-        if (!this.validStructure({source, entity})) {
+    attribute(entity) {
+        if (!this.validStructure(entity)) {
             throw new TypeError('invalid structure');
         }
     }
 
-    execute({source, entity}) {
-        this.setAttr({source, entity});
+    execute(entity) {
+        this.setAttr(entity);
     }
 }
 

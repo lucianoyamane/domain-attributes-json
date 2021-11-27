@@ -7,9 +7,9 @@ class HasMenuItemAttributeMenu extends PopUpDomain {
         super(attributesMap, 'hasMenuItem');
     }
 
-    attribute({source, entity}) { 
-        super.attribute({source, entity});
-        return source['menuitem'].length > 0;
+    attribute(entity) { 
+        super.attribute(entity);
+        return entity['menuitem'].length > 0;
 
     }
 

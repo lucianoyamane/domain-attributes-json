@@ -26,12 +26,10 @@ describe("main test", function(){
       let domainObj = JSON.parse(jsonValue);
 
       initAssociation(domainObj);
-
-      let entityResult = {};
       
-      processMenuAttributes.execute({source: domainObj, entity:entityResult});
+      processMenuAttributes.execute(domainObj);
 
-      console.log(entityResult)
+      console.log(domainObj)
       
       expect('').to.eql('')
         

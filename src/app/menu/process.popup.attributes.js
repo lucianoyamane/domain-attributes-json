@@ -10,19 +10,19 @@ let popUpAttributesMap = (attributesMap) => {
     return attributesMap;
 }
 
-class ProcessMenuAttributes extends AttributeHolder {
+class ProcesPopUpAttributes extends AttributeHolder {
 
     constructor(attributesMap) {
         super(popUpAttributesMap(attributesMap), 'popup_processed');
     }
 
-    execute({source, entity}) {
-        let { popup } = source;
-        this.attributesMap['popup'].forEach((value, key) => {
-            value.execute({source: popup, entity})
+    execute(entity) {
+        let { popup } = entity;
+        this.attributesMap['popup'].forEach(value => {
+            value.execute(popup)
         })   
     }
 
 }
 
-module.exports.init = (attributesMap) => new ProcessMenuAttributes(attributesMap);
+module.exports.init = (attributesMap) => new ProcesPopUpAttributes(attributesMap);

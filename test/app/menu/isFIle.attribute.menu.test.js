@@ -8,7 +8,7 @@ describe("isFile menu test", function(){
     it('test attribute', function() {
         let isFileAttributeDomain = init({});
         
-        let result = isFileAttributeDomain.attribute({source: {id: 'file'}, entity:{}});
+        let result = isFileAttributeDomain.attribute({id: 'file'});
         
         expect(result).to.be.true;
 
@@ -17,19 +17,17 @@ describe("isFile menu test", function(){
     it('test attribute false', function() {
 
         let isFileAttributeDomain = init({});
-        let result = isFileAttributeDomain.attribute({source: {id: 'other_id'}, entity:{}});
+        let result = isFileAttributeDomain.attribute({id: 'other_id'});
         
         expect(result).to.be.false;
 
     })
 
     it('test execute', function() {
-        let entity_test = {
-            menu: {}
-        }
+        let entity_test = {id: 'file'}
 
         let isFileAttributeDomain = init({});
-        isFileAttributeDomain.execute({source: {id: 'file'}, entity:entity_test});
+        isFileAttributeDomain.execute(entity_test);
 
         expect(entity_test.menu).to.have.property('isFile');
 
