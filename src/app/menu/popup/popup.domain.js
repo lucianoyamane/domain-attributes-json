@@ -11,10 +11,13 @@ class PopUpDomain extends AttributeHolder {
     }
 
     validStructure({source, entity}) {
-        return source.hasOwnProperty('menu') && source['menu'].hasOwnProperty('popup');
+        return source != undefined;
     }
 
     setAttr({source, entity}) {
+        if (!entity['menu'].hasOwnProperty('popup')) {
+            entity['menu']['popup'] = {};    
+        }
         entity['menu']['popup'][this.name] = this.attribute({source, entity});
     }
 

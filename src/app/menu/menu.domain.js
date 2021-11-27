@@ -12,7 +12,7 @@ class MenuDomain extends AttributeHolder {
     }
 
     validStructure({source, entity}) {
-        return source.hasOwnProperty('menu');
+        return source != undefined;
     }
 
     setAttr({source, entity}) {

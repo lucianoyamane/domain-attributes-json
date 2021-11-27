@@ -1,11 +1,10 @@
-// const { init:initIsFile, attribute:attributeIsFile } = require('./menu/isfile.attribute.menu');
+const { init:initHasMenuItem, attribute:attributeHasMenuItem } = require('./popup/hasmenuitem.attribute.popup');
 
 const { AttributeHolder } = require('../api/attribute.holder')
 
-let menuAttributesMap = () => {
-    let attributesMap = {}
+let popUpAttributesMap = (attributesMap) => {
     let map = new Map();
-    // map.set(attributeIsFile, initIsFile(attributesMap));
+    map.set(attributeHasMenuItem, initHasMenuItem(attributesMap));
 
     attributesMap['popup'] = map;
     return attributesMap;
@@ -13,16 +12,17 @@ let menuAttributesMap = () => {
 
 class ProcessMenuAttributes extends AttributeHolder {
 
-    constructor() {
-        super(menuAttributesMap(), 'popup_processed');
+    constructor(attributesMap) {
+        super(popUpAttributesMap(attributesMap), 'popup_processed');
     }
 
     execute({source, entity}) {
+        let { popup } = source;
         this.attributesMap['popup'].forEach((value, key) => {
-            value.execute({source, entity})
+            value.execute({source: popup, entity})
         })   
     }
 
 }
 
-module.exports.init = () => new ProcessMenuAttributes();
+module.exports.init = (attributesMap) => new ProcessMenuAttributes(attributesMap);

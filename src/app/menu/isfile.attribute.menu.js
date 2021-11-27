@@ -9,7 +9,7 @@ class IsFileAttributeMenu extends MenuDomain {
 
     attribute({source, entity}) { 
         super.attribute({source, entity});
-        let id = source['menu'].id;
+        let id = source.id;
 
         return id === 'file';
 
