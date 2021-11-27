@@ -29,7 +29,7 @@ describe("isFile menu test", function(){
         let isFileAttributeDomain = init({});
         isFileAttributeDomain.execute(entity_test);
 
-        expect(entity_test.menu).to.have.property('isFile');
+        expect(entity_test).to.have.property('isFile');
 
     });
 

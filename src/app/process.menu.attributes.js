@@ -26,7 +26,9 @@ class ProcessMenuAttributes extends AttributeHolder {
             value.execute(menu)
         })   
     }
-
 }
 
+let attribute = 'menu_processed';
+
 module.exports.init = () => new ProcessMenuAttributes();
+module.exports.attribute = attribute;

@@ -16,10 +16,7 @@ class MenuDomain extends AttributeHolder {
     }
 
     setAttr(entity) {
-        if (!entity.hasOwnProperty('menu')) {
-            entity['menu'] = {};
-        }
-        entity['menu'][this.name] = this.attribute(entity);
+        entity[this.name] = this.attribute(entity);
     }
 
 }

@@ -19,6 +19,5 @@ class IsFileAttributeMenu extends MenuDomain {
 
 let attribute = 'isFile';
 
-module.exports.IsFileAttributeMenu = IsFileAttributeMenu;
 module.exports.init = (attributesMap) => new IsFileAttributeMenu(attributesMap);
 module.exports.attribute = attribute;
