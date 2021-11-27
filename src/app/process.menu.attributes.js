@@ -1,7 +1,7 @@
 const { init:initIsFile, attribute:attributeIsFile } = require('./menu/isfile.attribute.menu');
 const { init:initProcessMenuAttributes, attribute:attributeProcessMenuAttributes } = require('./menu/process.popup.attributes');
 
-
+const { init:initAssociation } = require('../../src/app/association/association.app');
 const { AttributeHolder } = require('./api/attribute.holder')
 
 let menuAttributesMap = () => {
@@ -20,11 +20,16 @@ class ProcessMenuAttributes extends AttributeHolder {
         super(menuAttributesMap(), 'menu_processed');
     }
 
-    execute(entity) {
+    execute(source) {
+
+        let entity = JSON.parse(JSON.stringify(source));;
+        entity['source'] = source;
+        initAssociation(entity);
         let { menu } = entity;
         this.attributesMap['menu'].forEach(value => {
             value.execute(menu)
-        })   
+        })
+        return entity;   
     }
 }
 
