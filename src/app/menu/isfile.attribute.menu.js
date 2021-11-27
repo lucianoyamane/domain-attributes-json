@@ -9,7 +9,7 @@ class IsFileAttributeMenu extends MenuDomain {
 
     attribute({source, entity}) { 
         super.attribute({source, entity});
-        let id = this.getMenuAttribute('id', {source, entity});
+        let id = source['menu'].id;
 
         return id === 'file';
 
@@ -17,5 +17,8 @@ class IsFileAttributeMenu extends MenuDomain {
 
 }
 
+let attribute = 'isFile';
+
 module.exports.IsFileAttributeMenu = IsFileAttributeMenu;
 module.exports.init = (attributesMap) => new IsFileAttributeMenu(attributesMap);
+module.exports.attribute = attribute;
