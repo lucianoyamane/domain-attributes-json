@@ -1,14 +1,10 @@
 
-const { AttributeHolder } = require('../api/attribute.holder')
+const { AttributeHolder } = require('../api/attribute.holder');
 
 class MenuAttributeHolder extends AttributeHolder {
 
     constructor(attributesMap, name) {
         super(attributesMap, name);
-    }
-
-    getMenuAttribute(key, entity) {
-        return this.attributesMap['menu'].get(key).attribute(entity);
     }
 
     validStructure(entity) {

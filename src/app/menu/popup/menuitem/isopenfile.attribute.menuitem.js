@@ -2,6 +2,7 @@
 const { MenuItemAttributeHolder } = require('./menuitem.attribute.holder');
 const { attribute:isOpenAttribute } = require('./isopen.attribute.menuitem');
 const { attribute:isFileMenuAttribute } = require('../../isfile.attribute.menu');
+const { attribute:menuItemAttribute } = require('../../../constant/menuitem.constant');
 
 class IsOpenFileAttributeMenu extends MenuItemAttributeHolder {
 
@@ -19,7 +20,7 @@ class IsOpenFileAttributeMenu extends MenuItemAttributeHolder {
 
 }
 
-let attribute = 'isOpenFile';
+let attribute = menuItemAttribute.IS_OPEN_FILE;
 
 module.exports.init = (attributesMap) => new IsOpenFileAttributeMenu(attributesMap);
 module.exports.attribute = attribute;

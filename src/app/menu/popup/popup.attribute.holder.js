@@ -13,7 +13,6 @@ class PopUpAttributeHolder extends AttributeHolder {
     setAttr(entity) {
         entity[this.name] = this.attribute(entity);
     }
-
 }
 
 module.exports.PopUpAttributeHolder = PopUpAttributeHolder;

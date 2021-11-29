@@ -1,6 +1,8 @@
 
 const { MenuItemAttributeHolder } = require('./menuitem.attribute.holder');
 
+const { attribute:menuItemAttribute, value:menuItemValue } = require('../../../constant/menuitem.constant');
+
 class IsOpenAttributeMenu extends MenuItemAttributeHolder {
 
     constructor(attributesMap) {
@@ -9,13 +11,13 @@ class IsOpenAttributeMenu extends MenuItemAttributeHolder {
 
     attribute(entity) { 
         super.attribute(entity);
-        return entity['value'] === 'Open';
+        return entity[menuItemAttribute.VALUE] === menuItemValue.OPEN;
 
     }
 
 }
 
-let attribute = 'isOpen';
+let attribute = menuItemAttribute.IS_OPEN;
 
 module.exports.init = (attributesMap) => new IsOpenAttributeMenu(attributesMap);
 module.exports.attribute = attribute;
