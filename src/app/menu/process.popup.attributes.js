@@ -1,7 +1,7 @@
 const { init:initHasMenuItem, attribute:attributeHasMenuItem } = require('./popup/hasmenuitem.attribute.popup');
 const { init:initProcessMenuItem, attribute:attributeProcessMenuItem } = require('./popup/process.menuitem.attributes');
 
-const { AttributeHolder } = require('../api/attribute.holder')
+const { AbstractAttributeComponent } = require('../api/abstract.attribute.component')
 
 let popUpAttributesMap = (attributesMap) => {
     let map = new Map();
@@ -12,10 +12,10 @@ let popUpAttributesMap = (attributesMap) => {
     return attributesMap;
 }
 
-class ProcesPopUpAttributes extends AttributeHolder {
+class ProcesPopUpAttributes extends AbstractAttributeComponent {
 
     constructor(attributesMap) {
-        super(popUpAttributesMap(attributesMap), attribute);
+        super(popUpAttributesMap(attributesMap));
     }
 
     execute(entity) {
@@ -27,7 +27,7 @@ class ProcesPopUpAttributes extends AttributeHolder {
 
 }
 
-let attribute = 'popup_processed';
+let attribute = 'process_popup';
 
 module.exports.init = (attributesMap) => new ProcesPopUpAttributes(attributesMap);
 module.exports.attribute = attribute;

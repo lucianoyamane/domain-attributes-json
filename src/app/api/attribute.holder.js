@@ -1,7 +1,9 @@
-class AttributeHolder {
+const { AbstractAttributeComponent } = require('./abstract.attribute.component');
+
+class AttributeHolder extends AbstractAttributeComponent{
     
     constructor(attributesMap, name) {
-        this.attributesMap = attributesMap;
+        super(attributesMap);
         this.name = name;
     }
 

@@ -1,6 +1,6 @@
 const { init:isNewMenuItem, attribute:attributeIsNew } = require('./menuitem/isnew.attribute.menuitem');
 
-const { AttributeHolder } = require('../../api/attribute.holder')
+const { AbstractAttributeComponent } = require('../../api/abstract.attribute.component')
 
 let menuItemAttributesMap = (attributesMap) => {
     let map = new Map();
@@ -10,10 +10,10 @@ let menuItemAttributesMap = (attributesMap) => {
     return attributesMap;
 }
 
-class ProcessMenuItemAttributes extends AttributeHolder {
+class ProcessMenuItemAttributes extends AbstractAttributeComponent {
 
     constructor(attributesMap) {
-        super(menuItemAttributesMap(attributesMap), 'menu_item_processed');
+        super(menuItemAttributesMap(attributesMap));
     }
 
     execute(entity) {
@@ -28,7 +28,7 @@ class ProcessMenuItemAttributes extends AttributeHolder {
 
 }
 
-let attribute = 'menu_item_processed';
+let attribute = 'process_menu_item';
 
 module.exports.init = (attributesMap) => new ProcessMenuItemAttributes(attributesMap);
 module.exports.attribute = attribute;

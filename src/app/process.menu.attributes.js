@@ -2,7 +2,7 @@ const { init:initIsFile, attribute:attributeIsFile } = require('./menu/isfile.at
 const { init:initProcessMenuAttributes, attribute:attributeProcessMenuAttributes } = require('./menu/process.popup.attributes');
 
 const { init:initAssociation } = require('../../src/app/association/association.app');
-const { AttributeHolder } = require('./api/attribute.holder')
+const { AbstractAttributeComponent } = require('./api/abstract.attribute.component')
 
 let menuAttributesMap = () => {
     let attributesMap = {}
@@ -14,10 +14,10 @@ let menuAttributesMap = () => {
     return attributesMap;
 }
 
-class ProcessMenuAttributes extends AttributeHolder {
+class ProcessMenuAttributes extends AbstractAttributeComponent {
 
     constructor() {
-        super(menuAttributesMap(), 'menu_processed');
+        super(menuAttributesMap());
     }
 
     execute(source) {
@@ -33,7 +33,7 @@ class ProcessMenuAttributes extends AttributeHolder {
     }
 }
 
-let attribute = 'menu_processed';
+let attribute = 'process_menu';
 
 module.exports.init = () => new ProcessMenuAttributes();
 module.exports.attribute = attribute;
