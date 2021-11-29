@@ -1,10 +1,14 @@
 const { init:isNewMenuItem, attribute:attributeIsNew } = require('./menuitem/isnew.attribute.menuitem');
+const { init:isOpenMenuItem, attribute:attributeIsOpen } = require('./menuitem/isopen.attribute.menuitem');
+const { init:isOpenFileMenuItem, attribute:attributeIsOpenFile } = require('./menuitem/isopenfile.attribute.menuitem');
 
 const { AbstractAttributeComponent } = require('../../api/abstract.attribute.component')
 
 let menuItemAttributesMap = (attributesMap) => {
     let map = new Map();
     map.set(attributeIsNew, isNewMenuItem(attributesMap));
+    map.set(attributeIsOpen, isOpenMenuItem(attributesMap));
+    map.set(attributeIsOpenFile, isOpenFileMenuItem(attributesMap));
 
     attributesMap['menuitem'] = map;
     return attributesMap;

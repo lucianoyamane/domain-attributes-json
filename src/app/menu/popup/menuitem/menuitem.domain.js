@@ -6,6 +6,14 @@ class MenuItemDomain extends AttributeHolder {
         super(attributesMap, name);
     }
 
+    getAttributeMenuItem(key, entity) {
+        return this.attributesMap['menuitem'].get(key).attribute(entity);
+    }
+
+    getAttributeMenu(key, entity) {
+        return this.attributesMap['menu'].get(key).attribute(entity['popup']['menu']);
+    }
+
     validStructure(entity) {
         return entity != undefined;
     }
