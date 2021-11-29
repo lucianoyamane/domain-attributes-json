@@ -1,6 +1,6 @@
 const { AttributeHolder } = require('../../api/attribute.holder')
 
-class PopUpDomain extends AttributeHolder {
+class PopUpAttributeHolder extends AttributeHolder {
 
     constructor(attributesMap, name) {
         super(attributesMap, name);
@@ -16,4 +16,4 @@ class PopUpDomain extends AttributeHolder {
 
 }
 
-module.exports.PopUpDomain = PopUpDomain;
+module.exports.PopUpAttributeHolder = PopUpAttributeHolder;

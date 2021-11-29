@@ -1,7 +1,7 @@
 
-const { PopUpDomain } = require('./popup.domain');
+const { PopUpAttributeHolder } = require('./popup.attribute.holder');
 
-class HasMenuItemAttributeMenu extends PopUpDomain {
+class HasMenuItemAttributeMenu extends PopUpAttributeHolder {
 
     constructor(attributesMap) {
         super(attributesMap, 'hasMenuItem');

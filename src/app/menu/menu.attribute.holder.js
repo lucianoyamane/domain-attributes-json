@@ -1,7 +1,7 @@
 
 const { AttributeHolder } = require('../api/attribute.holder')
 
-class MenuDomain extends AttributeHolder {
+class MenuAttributeHolder extends AttributeHolder {
 
     constructor(attributesMap, name) {
         super(attributesMap, name);
@@ -21,4 +21,4 @@ class MenuDomain extends AttributeHolder {
 
 }
 
-module.exports.MenuDomain = MenuDomain;
+module.exports.MenuAttributeHolder = MenuAttributeHolder;

@@ -1,9 +1,9 @@
 
-const { MenuItemDomain } = require('./menuitem.domain');
+const { MenuItemAttributeHolder } = require('./menuitem.attribute.holder');
 const { attribute:isOpenAttribute } = require('./isopen.attribute.menuitem');
 const { attribute:isFileMenuAttribute } = require('../../isfile.attribute.menu');
 
-class IsOpenFileAttributeMenu extends MenuItemDomain {
+class IsOpenFileAttributeMenu extends MenuItemAttributeHolder {
 
     constructor(attributesMap) {
         super(attributesMap, attribute);

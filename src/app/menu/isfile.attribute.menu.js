@@ -1,7 +1,7 @@
 
-const { MenuDomain } = require('./menu.domain');
+const { MenuAttributeHolder } = require('./menu.attribute.holder');
 
-class IsFileAttributeMenu extends MenuDomain {
+class IsFileAttributeMenu extends MenuAttributeHolder {
 
     constructor(attributesMap) {
         super(attributesMap, 'isFile');
