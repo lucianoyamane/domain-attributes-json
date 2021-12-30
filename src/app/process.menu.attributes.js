@@ -4,7 +4,8 @@ const { init:initProcessMenuAttributes, attribute:attributeProcessMenuAttributes
 const { init:initAssociation } = require('../../src/app/association/association.app');
 const { AbstractAttributeComponent } = require('./api/abstract.attribute.component');
 
-const { MENU, SOURCE } = require('./constant/menu.constant')
+const { menu:menuConstant } = require('./constant');
+
 
 let menuAttributesMap = () => {
     let attributesMap = {}
@@ -12,7 +13,7 @@ let menuAttributesMap = () => {
     map.set(attributeIsFile, initIsFile(attributesMap));
     map.set(attributeProcessMenuAttributes, initProcessMenuAttributes(attributesMap));
 
-    attributesMap[MENU] = map;
+    attributesMap[menuConstant.MENU] = map;
     return attributesMap;
 }
 
@@ -25,10 +26,10 @@ class ProcessMenuAttributes extends AbstractAttributeComponent {
     execute(source) {
 
         let entity = JSON.parse(JSON.stringify(source));;
-        entity[SOURCE] = source;
+        entity[menuConstant.SOURCE] = source;
         initAssociation(entity);
         let { menu } = entity;
-        this.attributesMap[MENU].forEach(value => {
+        this.attributesMap[menuConstant.MENU].forEach(value => {
             value.execute(menu)
         })
         return entity;   

@@ -1,7 +1,6 @@
 const { AttributeHolder } = require('../../../api/attribute.holder');
-const { MENU_ITEM } = require('../../../constant/menuitem.constant');
-const { POPUP } = require('../../../constant/popup.constant');
-const { MENU } = require('../../../constant/menu.constant');
+
+const { menu, popup, menuitem } = require('../../../constant')
 
 class MenuItemAttributeHolder extends AttributeHolder {
 
@@ -10,11 +9,11 @@ class MenuItemAttributeHolder extends AttributeHolder {
     }
 
     getAttributeMenuItem(key, entity) {
-        return this.attributesMap[MENU_ITEM].get(key).attribute(entity);
+        return this.attributesMap[menuitem.MENU_ITEM].get(key).attribute(entity);
     }
 
     getAttributeMenu(key, entity) {
-        return this.attributesMap[MENU].get(key).attribute(entity[POPUP][MENU]);
+        return this.attributesMap[menu.MENU].get(key).attribute(entity[popup.POPUP][menu.MENU]);
     }
 
     validStructure(entity) {

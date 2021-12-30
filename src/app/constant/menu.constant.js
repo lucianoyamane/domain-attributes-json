@@ -4,7 +4,7 @@ const SOURCE = 'source';
 const FILE_ID = 'file';
 const IS_FILE = 'isFile';
 
-module.exports = {
+module.exports.constants = {
     MENU,
     SOURCE,
     value: {

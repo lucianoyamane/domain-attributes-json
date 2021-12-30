@@ -1,7 +1,9 @@
 
 const { MenuAttributeHolder } = require('./menu.attribute.holder');
 
-const { value, attribute:attributeMenu } = require('./../constant/menu.constant');
+const { menu } = require('./../constant');
+let value = menu.value;
+let attribute = menu.attribute.IS_FILE;
 
 class IsFileAttributeMenu extends MenuAttributeHolder {
 
@@ -18,8 +20,6 @@ class IsFileAttributeMenu extends MenuAttributeHolder {
     }
 
 }
-
-let attribute = attributeMenu.IS_FILE;
 
 module.exports.init = (attributesMap) => new IsFileAttributeMenu(attributesMap);
 module.exports.attribute = attribute;

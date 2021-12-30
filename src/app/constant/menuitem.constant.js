@@ -1,7 +1,7 @@
 const MENU_ITEM = 'menuitem';
 const PROCESS_KEY = 'process_menu_item';
 
-module.exports = {
+module.exports.constants = {
     MENU_ITEM,
     PROCESS_KEY,
     attribute: {
