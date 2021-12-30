@@ -3,6 +3,8 @@ var expect = chai.expect;
 
 const { init } = require('../../src/app/process.menu.attributes');
 
+const { init:initAssociation } = require('../../src/app/association/association.app');
+
 
 
 describe("main test", function(){
@@ -24,6 +26,8 @@ describe("main test", function(){
       let processMenuAttributes = init(new Map());
 
       let domainObj = JSON.parse(jsonValue);
+
+      // initAssociation(domainObj);
       
       let entity = processMenuAttributes.execute(domainObj);
 
