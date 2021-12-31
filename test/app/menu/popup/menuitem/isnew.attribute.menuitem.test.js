@@ -8,7 +8,7 @@ describe("isNew menuitem test", function(){
     it('basic test', function() {
         let isNewAttributeDomain = init({});
         
-        let result = isNewAttributeDomain.attribute({value: 'new'});
+        let result = isNewAttributeDomain.attribute({popup: {}, value: 'new'});
         
         expect(result).to.be.true;
 
@@ -17,14 +17,14 @@ describe("isNew menuitem test", function(){
     it('test attribute false', function() {
 
         let isNewAttributeDomain = init({});
-        let result = isNewAttributeDomain.attribute({value: 'old'});
+        let result = isNewAttributeDomain.attribute({popup: {}, value: 'old'});
         
         expect(result).to.be.false;
 
     })
 
     it('test execute', function() {
-        let entity_test = {value: 'new'}
+        let entity_test = {popup: {}, value: 'new'}
 
         let isNewAttributeDomain = init({});
         isNewAttributeDomain.execute(entity_test);

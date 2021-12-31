@@ -7,7 +7,7 @@ class PopUpAttributeHolder extends AttributeHolder {
     }
 
     validStructure(entity) {
-        return entity != undefined;
+        return (entity && entity['menu'] && entity['menuitem']) != undefined;
     }
 
     setAttr(entity) {

@@ -9,7 +9,7 @@ describe("PopUpAttributeHolder test", function(){
 
         let holder = new PopUpAttributeHolder({}, 'test');
         
-        let result = holder.validStructure({});
+        let result = holder.validStructure({menu: {}, menuitem: []});
         
         expect(result).to.be.true;
 
@@ -29,7 +29,7 @@ describe("PopUpAttributeHolder test", function(){
 
         let holder = new PopUpAttributeHolder({}, 'test');
         
-        let entity_test = {};
+        let entity_test = {menu: {}, menuitem: []};
 
         holder.setAttr(entity_test);
         

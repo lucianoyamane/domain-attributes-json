@@ -8,7 +8,7 @@ describe("isNew menuitem test", function(){
     it('basic test', function() {
         let hasMenuAttributeDomain = init({});
         
-        let result = hasMenuAttributeDomain.attribute({menuitem:[{}]});
+        let result = hasMenuAttributeDomain.attribute({menu: {}, menuitem:[{}]});
         
         expect(result).to.be.true;
 
@@ -18,14 +18,14 @@ describe("isNew menuitem test", function(){
 
         let hasMenuAttributeDomain = init({});
         
-        let result = hasMenuAttributeDomain.attribute({menuitem:[]});
+        let result = hasMenuAttributeDomain.attribute({menu: {}, menuitem:[]});
         
         expect(result).to.be.false;
 
     })
 
     it('test execute', function() {
-        let entity_test = {menuitem:[{}]}
+        let entity_test = {menu: {}, menuitem:[{}]}
 
         let isNewAttributeDomain = init({});
         isNewAttributeDomain.execute(entity_test);

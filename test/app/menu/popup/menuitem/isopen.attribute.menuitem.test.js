@@ -8,7 +8,7 @@ describe("isOpen menuitem test", function(){
     it('basic test', function() {
         let isOpenAttributeDomain = init({});
         
-        let result = isOpenAttributeDomain.attribute({value: 'open'});
+        let result = isOpenAttributeDomain.attribute({popup: {}, value: 'open'});
         
         expect(result).to.be.true;
 
@@ -17,14 +17,14 @@ describe("isOpen menuitem test", function(){
     it('test attribute false', function() {
 
         let isOpenAttributeDomain = init({});
-        let result = isOpenAttributeDomain.attribute({value: 'old'});
+        let result = isOpenAttributeDomain.attribute({popup: {}, value: 'old'});
         
         expect(result).to.be.false;
 
     })
 
     it('test execute', function() {
-        let entity_test = {value: 'new'}
+        let entity_test = {popup: {}, value: 'new'}
 
         let isOpenAttributeDomain = init({});
         isOpenAttributeDomain.execute(entity_test);
