@@ -8,7 +8,7 @@ describe("isFile menu test", function(){
     it('test attribute', function() {
         let isFileAttributeDomain = init({});
         
-        let result = isFileAttributeDomain.attribute({id: 'file'});
+        let result = isFileAttributeDomain.attribute({id: 'file', popup: {}});
         
         expect(result).to.be.true;
 
@@ -17,14 +17,14 @@ describe("isFile menu test", function(){
     it('test attribute false', function() {
 
         let isFileAttributeDomain = init({});
-        let result = isFileAttributeDomain.attribute({id: 'other_id'});
+        let result = isFileAttributeDomain.attribute({id: 'other_id', popup: {}});
         
         expect(result).to.be.false;
 
     })
 
     it('test execute', function() {
-        let entity_test = {id: 'file'}
+        let entity_test = {id: 'file', popup: {}}
 
         let isFileAttributeDomain = init({});
         isFileAttributeDomain.execute(entity_test);

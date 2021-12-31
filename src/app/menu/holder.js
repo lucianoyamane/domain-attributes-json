@@ -8,7 +8,7 @@ class MenuAttributeHolder extends AttributeHolder {
     }
 
     validStructure(entity) {
-        return entity != undefined;
+        return (entity && entity['popup']) != undefined;
     }
 
     setAttr(entity) {
