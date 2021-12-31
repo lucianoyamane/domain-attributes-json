@@ -1,5 +1,5 @@
 
-const { MenuItemAttributeHolder } = require('./menuitem.attribute.holder');
+const { MenuItemAttributeHolder } = require('./holder');
 
 const { menuitem } = require('../../../constant');
 let value = menuitem.value;

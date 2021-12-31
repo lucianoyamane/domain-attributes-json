@@ -1,5 +1,5 @@
 
-const { PopUpAttributeHolder } = require('./popup.attribute.holder');
+const { PopUpAttributeHolder } = require('./holder');
 
 const { menuitem, popup } = require('../../constant');
 let attribute = popup.attribute.HAS_MENU_ITEM;

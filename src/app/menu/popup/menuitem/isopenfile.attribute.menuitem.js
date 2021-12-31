@@ -1,5 +1,5 @@
 
-const { MenuItemAttributeHolder } = require('./menuitem.attribute.holder');
+const { MenuItemAttributeHolder } = require('./holder');
 const { menuitem, menu } = require('../../../constant');
 
 let IS_OPEN_FILE = menuitem.attribute.IS_OPEN_FILE;

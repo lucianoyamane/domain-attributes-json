@@ -1,7 +1,7 @@
 var chai = require('chai'); 
 var expect = chai.expect;
 
-const { MenuAttributeHolder } = require('../../../src/app/menu/menu.attribute.holder');
+const { MenuAttributeHolder } = require('../../../src/app/menu/holder');
 
 describe("MenuAttributeHolder test", function(){
 

@@ -1,7 +1,7 @@
 var chai = require('chai'); 
 var expect = chai.expect;
 
-const { PopUpAttributeHolder } = require('../../../../src/app/menu/popup/popup.attribute.holder');
+const { PopUpAttributeHolder } = require('../../../../src/app/menu/popup/holder');
 
 describe("PopUpAttributeHolder test", function(){
 
