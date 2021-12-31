@@ -1,5 +1,5 @@
 const { init:initHasMenuItem } = require('./popup/hasmenuitem.attribute.popup');
-const { init:initProcessMenuItem, attribute:attributeProcessMenuItem } = require('./popup/process.menuitem.attributes');
+const { init:initProcessMenuItem } = require('./popup/process.menuitem.attributes');
 
 const { AbstractAttributeComponent } = require('../../api/abstract.attribute.component')
 const { popup: popupConstant } = require('../constant');

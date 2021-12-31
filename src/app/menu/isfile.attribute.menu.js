@@ -3,12 +3,12 @@ const { MenuAttributeHolder } = require('./menu.attribute.holder');
 
 const { menu } = require('./../constant');
 let value = menu.value;
-let attribute = menu.attribute.IS_FILE;
+let IS_FILE = menu.attribute.IS_FILE;
 
 class IsFileAttributeMenu extends MenuAttributeHolder {
 
     constructor(attributesMap) {
-        super(attributesMap, attribute);
+        super(attributesMap, IS_FILE);
     }
 
     attribute(entity) { 

@@ -4,13 +4,15 @@ const { init:isOpenFileMenuItem } = require('./menuitem/isopenfile.attribute.men
 
 const { AbstractAttributeComponent } = require('../../../api/abstract.attribute.component');
 
-const { menuitem: menuItemConstant } = require('../../constant')
+const { menuitem: menuItemConstant } = require('../../constant');
+
+let constantAttribute = menuItemConstant.attribute;
 
 let menuItemAttributesMap = (attributesMap) => {
     let map = new Map();
-    map.set(menuItemConstant.attribute.IS_NEW, isNewMenuItem(attributesMap));
-    map.set(menuItemConstant.attribute.IS_OPEN, isOpenMenuItem(attributesMap));
-    map.set(menuItemConstant.attribute.IS_OPEN_FILE, isOpenFileMenuItem(attributesMap));
+    map.set(constantAttribute.IS_NEW, isNewMenuItem(attributesMap));
+    map.set(constantAttribute.IS_OPEN, isOpenMenuItem(attributesMap));
+    map.set(constantAttribute.IS_OPEN_FILE, isOpenFileMenuItem(attributesMap));
 
     attributesMap[menuItemConstant.MENU_ITEM] = map;
     return attributesMap;
@@ -34,7 +36,4 @@ class ProcessMenuItemAttributes extends AbstractAttributeComponent {
 
 }
 
-let attribute = menuItemConstant.PROCESS_KEY;
-
 module.exports.init = (attributesMap) => new ProcessMenuItemAttributes(attributesMap);
-module.exports.attribute = attribute;
