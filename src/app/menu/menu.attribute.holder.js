@@ -1,5 +1,5 @@
 
-const { AttributeHolder } = require('../api/attribute.holder');
+const { AttributeHolder } = require('../../api/attribute.holder');
 
 class MenuAttributeHolder extends AttributeHolder {
 

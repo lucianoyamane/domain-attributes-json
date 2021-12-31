@@ -1,7 +1,7 @@
 const { init:initHasMenuItem, attribute:attributeHasMenuItem } = require('./popup/hasmenuitem.attribute.popup');
 const { init:initProcessMenuItem, attribute:attributeProcessMenuItem } = require('./popup/process.menuitem.attributes');
 
-const { AbstractAttributeComponent } = require('../api/abstract.attribute.component')
+const { AbstractAttributeComponent } = require('../../api/abstract.attribute.component')
 const { popup: popupConstant } = require('../constant');
 
 let popUpAttributesMap = (attributesMap) => {

@@ -2,7 +2,7 @@ const { init:isNewMenuItem, attribute:attributeIsNew } = require('./menuitem/isn
 const { init:isOpenMenuItem, attribute:attributeIsOpen } = require('./menuitem/isopen.attribute.menuitem');
 const { init:isOpenFileMenuItem, attribute:attributeIsOpenFile } = require('./menuitem/isopenfile.attribute.menuitem');
 
-const { AbstractAttributeComponent } = require('../../api/abstract.attribute.component');
+const { AbstractAttributeComponent } = require('../../../api/abstract.attribute.component');
 
 const { menuitem: menuItemConstant } = require('../../constant')
 

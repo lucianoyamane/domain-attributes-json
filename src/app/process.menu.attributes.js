@@ -2,7 +2,7 @@ const { init:initIsFile, attribute:attributeIsFile } = require('./menu/isfile.at
 const { init:initProcessMenuAttributes, attribute:attributeProcessMenuAttributes } = require('./menu/process.popup.attributes');
 
 const { init:initAssociation } = require('../../src/app/association/association.app');
-const { AbstractAttributeComponent } = require('./api/abstract.attribute.component');
+const { AbstractAttributeComponent } = require('./../api/abstract.attribute.component');
 
 const { menu:menuConstant } = require('./constant');
 
