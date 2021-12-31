@@ -19,4 +19,3 @@ class HasMenuItemAttributeMenu extends PopUpAttributeHolder {
 }
 
 module.exports.init = (attributesMap) => new HasMenuItemAttributeMenu(attributesMap);
-module.exports.attribute = attribute;

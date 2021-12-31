@@ -22,4 +22,3 @@ class IsOpenAttributeMenu extends MenuItemAttributeHolder {
 }
 
 module.exports.init = (attributesMap) => new IsOpenAttributeMenu(attributesMap);
-module.exports.attribute = IS_OPEN;

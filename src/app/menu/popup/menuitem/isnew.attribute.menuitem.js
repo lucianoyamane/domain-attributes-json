@@ -21,4 +21,3 @@ class IsNewAttributeMenu extends MenuItemAttributeHolder {
 }
 
 module.exports.init = (attributesMap) => new IsNewAttributeMenu(attributesMap);
-module.exports.attribute = IS_NEW;

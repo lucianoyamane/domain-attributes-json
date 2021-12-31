@@ -1,5 +1,5 @@
-const { init:initIsFile, attribute:attributeIsFile } = require('./menu/isfile.attribute.menu');
-const { init:initProcessMenuAttributes, attribute:attributeProcessMenuAttributes } = require('./menu/process.popup.attributes');
+const { init:initIsFile} = require('./menu/isfile.attribute.menu');
+const { init:initProcessMenuAttributes } = require('./menu/process.popup.attributes');
 
 const { init:initAssociation } = require('../../src/app/association/association.app');
 const { AbstractAttributeComponent } = require('./../api/abstract.attribute.component');
@@ -10,8 +10,8 @@ const { menu:menuConstant } = require('./constant');
 let menuAttributesMap = () => {
     let attributesMap = {}
     let map = new Map();
-    map.set(attributeIsFile, initIsFile(attributesMap));
-    map.set(attributeProcessMenuAttributes, initProcessMenuAttributes(attributesMap));
+    map.set(menuConstant.attribute.IS_FILE, initIsFile(attributesMap));
+    map.set(menuConstant.PROCESS_KEY, initProcessMenuAttributes(attributesMap));
 
     attributesMap[menuConstant.MENU] = map;
     return attributesMap;

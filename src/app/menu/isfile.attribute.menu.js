@@ -22,4 +22,3 @@ class IsFileAttributeMenu extends MenuAttributeHolder {
 }
 
 module.exports.init = (attributesMap) => new IsFileAttributeMenu(attributesMap);
-module.exports.attribute = attribute;
