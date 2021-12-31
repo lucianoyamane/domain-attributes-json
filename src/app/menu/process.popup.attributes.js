@@ -1,15 +1,14 @@
-const { init:initHasMenuItem } = require('./popup/hasmenuitem.attribute.popup');
-const { init:initProcessMenuItem } = require('./popup/process.menuitem.attributes');
+const { hasmenuitem, processAttributes } = require('./popup')
 
 const { AbstractAttributeComponent } = require('../../api/abstract.attribute.component')
-const { popup: popupConstant } = require('../constant');
+const { popup: constant } = require('../constant');
 
 let popUpAttributesMap = (attributesMap) => {
     let map = new Map();
-    map.set(popupConstant.attribute.HAS_MENU_ITEM, initHasMenuItem(attributesMap));
-    map.set(popupConstant.PROCESS_KEY, initProcessMenuItem(attributesMap));
+    map.set(constant.attribute.HAS_MENU_ITEM, hasmenuitem(attributesMap));
+    map.set(constant.PROCESS_KEY, processAttributes(attributesMap));
 
-    attributesMap[popupConstant.POPUP] = map;
+    attributesMap[constant.POPUP] = map;
     return attributesMap;
 }
 
@@ -21,7 +20,7 @@ class ProcesPopUpAttributes extends AbstractAttributeComponent {
 
     execute(entity) {
         let { popup } = entity;
-        this.attributesMap[popupConstant.POPUP].forEach(value => {
+        this.attributesMap[constant.POPUP].forEach(value => {
             value.execute(popup)
         })   
     }

@@ -1,20 +1,17 @@
-const { init:isNewMenuItem } = require('./menuitem/isnew.attribute.menuitem');
-const { init:isOpenMenuItem } = require('./menuitem/isopen.attribute.menuitem');
-const { init:isOpenFileMenuItem } = require('./menuitem/isopenfile.attribute.menuitem');
+const { isnew, isopen, isopenfile } = require('./menuitem')
+const { menuitem: constant } = require('../../constant');
 
 const { AbstractAttributeComponent } = require('../../../api/abstract.attribute.component');
 
-const { menuitem: menuItemConstant } = require('../../constant');
-
-let constantAttribute = menuItemConstant.attribute;
+let constantAttribute = constant.attribute;
 
 let menuItemAttributesMap = (attributesMap) => {
     let map = new Map();
-    map.set(constantAttribute.IS_NEW, isNewMenuItem(attributesMap));
-    map.set(constantAttribute.IS_OPEN, isOpenMenuItem(attributesMap));
-    map.set(constantAttribute.IS_OPEN_FILE, isOpenFileMenuItem(attributesMap));
+    map.set(constantAttribute.IS_NEW, isnew(attributesMap));
+    map.set(constantAttribute.IS_OPEN, isopen(attributesMap));
+    map.set(constantAttribute.IS_OPEN_FILE, isopenfile(attributesMap));
 
-    attributesMap[menuItemConstant.MENU_ITEM] = map;
+    attributesMap[constant.MENU_ITEM] = map;
     return attributesMap;
 }
 
@@ -26,7 +23,7 @@ class ProcessMenuItemAttributes extends AbstractAttributeComponent {
 
     execute(entity) {
         let { menuitem } = entity;
-        this.attributesMap[menuItemConstant.MENU_ITEM].forEach(attributeMap => {
+        this.attributesMap[constant.MENU_ITEM].forEach(attributeMap => {
             menuitem.forEach(value => {
                 attributeMap.execute(value)
             }) 
